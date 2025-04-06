@@ -19,7 +19,7 @@
 
 # define SIZE 700
 
-# define ESC 53
+# define ESC 65307
 # define SCROLL_UP 4
 # define SCROLL_DOWN 5
 

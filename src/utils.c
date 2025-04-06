@@ -24,8 +24,11 @@ int	exit_fractal(t_fractal *fractal)
 
 void	put_color_to_pixel(t_fractal *fractal, int x, int y, int color)
 {
-	int	*buff;
+	char	*buff;
 
-	buff = fractal->img_addr;
-	buff[(y * fractal->line_size / 4) + x] = color;
+	if (x < 0 || x >= SIZE || y < 0 || y >= SIZE)
+		return ;
+	buff = fractal->img_addr + (y * fractal->line_size + x *
+			(fractal->bits / 8));
+	*(unsigned int *)dst = color;
 }

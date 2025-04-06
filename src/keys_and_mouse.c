@@ -15,26 +15,24 @@
 void	zoom(t_fractal *fractal, int x, int y, int zoom)
 {
 	double	zoom_level;
-
+	double	px;
+	double	py;
+	
+	px = (double)x / fractal->zoom + fractal->offset_x;
+	py = (double)y / fractal->zoom + fractal->offset_y;
 	zoom_level = 1.42;
 	if (zoom == 1)
 	{
-		fractal->offset_x = (x / fractal->zoom + fractal->offset_x) - (x
-				/ (fractal->zoom * zoom_level));
-		fractal->offset_y = (y / fractal->zoom + fractal->offset_y) - (y
-				/ (fractal->zoom * zoom_level));
 		fractal->zoom *= zoom_level;
 	}
 	else if (zoom == -1)
 	{
-		fractal->offset_x = (x / fractal->zoom + fractal->offset_x) - (x
-				/ (fractal->zoom / zoom_level));
-		fractal->offset_y = (y / fractal->zoom + fractal->offset_y) - (y
-				/ fractal->zoom / zoom_level);
 		fractal->zoom /= zoom_level;
 	}
 	else
 		return ;
+	fractal->offset_x = px - (double)x / fractal->zoom;
+	fractal->offset_y = py - (double)y / fractal->zoom;
 
 }
 

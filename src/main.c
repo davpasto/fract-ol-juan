@@ -25,10 +25,9 @@ int	main(int ac, char **av)
 	fractal = malloc(sizeof(t_fractal));
 	init_fractal(fractal);
 	init_mlx(fractal);
-	selector(fractal, av[1]);
 	mlx_key_hook(fractal->window, key_hook, fractal);
 	mlx_mouse_hook(fractal->window, mouse_hook, fractal);
-	//selector(fractal, av[1]);
+	selector(fractal, av[1]);
 	mlx_loop(fractal->mlx);
 	return (0);
 }
@@ -44,7 +43,7 @@ int	selector(t_fractal *fractal, char *str)
 			fractal->cx = -0.745429;
 			fractal->cy = 0.05;
 		}
-		//draw_julia(fractal);
+		draw_julia(fractal);
 	}
 	else
 	{

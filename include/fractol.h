@@ -64,4 +64,6 @@ void		put_color_to_pixel(t_fractal *fractal, int x, int y, int color);
 //draw.c
 void    draw_mandelbrot(t_fractal *fractal);
 void    calculate_mandelbrot(t_fractal *fractal);
+void	draw_julia(t_fractal *fractal);
+void	calculate_julia(t_fractal *fractal);
 #endif

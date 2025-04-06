@@ -30,5 +30,5 @@ void	put_color_to_pixel(t_fractal *fractal, int x, int y, int color)
 		return ;
 	buff = fractal->img_addr + (y * fractal->line_size + x *
 			(fractal->bits / 8));
-	*(unsigned int *)dst = color;
+	*(unsigned int *)buff = color;
 }

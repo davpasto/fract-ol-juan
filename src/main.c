@@ -38,11 +38,11 @@ int	selector(t_fractal *fractal, char *str)
 		draw_mandelbrot(fractal);
 	else if (ft_strncmp(str, "julia", 6) == 0)
 	{
-		if (!fractal->cx && !fractal->cy)
-		{
-			fractal->cx = -0.745429;
-			fractal->cy = 0.05;
-		}
+		fractal->offset_x = -1.0;
+		fractal->offset_y = -1.0;
+		fractal->zoom = 200;
+		fractal->cx = -0.745429;
+		fractal->cy = 0.05;
 		draw_julia(fractal);
 	}
 	else

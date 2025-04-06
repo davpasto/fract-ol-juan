@@ -25,9 +25,10 @@ int	main(int ac, char **av)
 	fractal = malloc(sizeof(t_fractal));
 	init_fractal(fractal);
 	init_mlx(fractal);
+	selector(fractal, av[1]);
 	mlx_key_hook(fractal->window, key_hook, fractal);
 	mlx_mouse_hook(fractal->window, mouse_hook, fractal);
-	selector(fractal, av[1]);
+	//selector(fractal, av[1]);
 	mlx_loop(fractal->mlx);
 	return (0);
 }

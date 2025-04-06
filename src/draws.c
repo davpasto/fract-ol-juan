@@ -80,7 +80,7 @@ void	calculate_julia(t_fractal *fractal)
 			break ;
 	}
 	if (i == fractal->max_iterations)
-		put_color_to_pixel(fractal, fractal->x, fractal->y, 0x000000);
+		put_color_to_pixel(fractal, fractal->x, fractal->y, 0x00FF00);
 	else
 		put_color_to_pixel(fractal, fractal->x, fractal->y, (fractal->color * (i
 						% 255)));

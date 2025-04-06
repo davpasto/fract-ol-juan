@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 	init_fractal(fractal);
 	init_mlx(fractal);
 	mlx_key_hook(fractal->window, key_hook, fractal);
-	//mlx_mouse_hook(fractal->window, mouse_hook, fractal);
+	mlx_mouse_hook(fractal->window, mouse_hook, fractal);
 	selector(fractal, av[1]);
 	mlx_loop(fractal->mlx);
 	return (0);
@@ -34,10 +34,23 @@ int	main(int ac, char **av)
 
 int	selector(t_fractal *fractal, char *str)
 {
-	//if (ft_strncmp(str, "mandel", 7) == 0)
-		//draw_mandelbrot(fractal);
+	if (ft_strncmp(str, "mandel", 7) == 0)
+		draw_mandelbrot(fractal);
+	else if (ft_strncmp(str, "julia", 6) == 0)
+	{
+		if (!fractal->cx && !fractal->cy)
+		{
+			fractal->cx = -0.745429;
+			fractal->cy = 0.05;
+		}
+		//draw_julia(fractal);
+	}
+	else
+	{
+		ft_putendl_fd("Fractals: mandelbrot, julia", 1);
+		exit_fractal(fractal);
+	}
 	mlx_put_image_to_window(fractal->mlx, fractal->window, fractal->image, 0,
 	0);
-	printf("string:%s ", str);
 	return (0);
 }

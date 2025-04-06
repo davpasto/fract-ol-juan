@@ -15,13 +15,15 @@ SRC_FILES = \
 	    $(SRC_DIR)/main.c\
 	    $(SRC_DIR)/init.c\
 	    $(SRC_DIR)/keys_and_mouse.c\
-	    $(SRC_DIR)/utils.c
+	    $(SRC_DIR)/utils.c\
+	    $(SRC_DIR)/draws.c
 
 OBJ_FILES = \
 	    $(OBJ_DIR)/main.o\
 	    $(OBJ_DIR)/init.o\
 	    $(OBJ_DIR)/keys_and_mouse.o\
-	    $(OBJ_DIR)/utils.o
+	    $(OBJ_DIR)/utils.o\
+	    $(OBJ_DIR)/draws.o
 
 NAME = fractol
 

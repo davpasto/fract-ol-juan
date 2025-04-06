@@ -36,7 +36,7 @@ typedef struct s_fractal
 	void	*mlx;
 	void	*window;
 	void	*image;
-	void	*addr;
+	void	*img_addr;
 	int		bits;
 	int		line_size;
 	int		endian;
@@ -59,4 +59,9 @@ int		mouse_hook(int mouse_code, int x, int y, t_fractal *fractal);
 
 // utils.c
 int		exit_fractal(t_fractal *fractal);
+void		put_color_to_pixel(t_fractal *fractal, int x, int y, int color);
+
+//draw.c
+void    draw_mandelbrot(t_fractal *fractal);
+void    calculate_mandelbrot(t_fractal *fractal);
 #endif

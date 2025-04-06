@@ -28,7 +28,7 @@ void	init_mlx(t_fractal *fractal)
 	fractal->mlx = mlx_init();
 	fractal->window = mlx_new_window(fractal->mlx, SIZE, SIZE, "Window");
 	fractal->image = mlx_new_image(fractal->mlx, SIZE, SIZE);
-	fractal->addr = mlx_get_data_addr(fractal->image,
+	fractal->img_addr = mlx_get_data_addr(fractal->image,
 			&fractal->bits,
 			&fractal->line_size,
 			&fractal->endian);
